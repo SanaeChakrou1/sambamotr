@@ -9,7 +9,7 @@ A comparative study of two different multi-object tracking approaches: **OSNet-b
 
 This repository provides implementations and comparisons of two distinct tracking methods:
 
-###**OSNet-based Tracking**
+**OSNet-based Tracking**
 - Uses OSNet (Omni-Scale Network) for appearance-based re-identification
 - Extracts discriminative appearance features
 - Focuses on visual similarity for identity matching
