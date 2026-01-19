@@ -69,10 +69,7 @@ cd dancetrack
 cd checkpoints
 wget https://huggingface.co/mattiasegu/sambamotr/resolve/main/sambamotr_pretrained/dancetrack/dab_detr/sambamotr_dab_dancetrack.pth
 cd ..
-**Alternative:** Use the automated setup script:
-```bash
-bash scripts/setup_all.sh
-```
+
 ##  Quick Start
 
 ### Run OSNet Tracking
