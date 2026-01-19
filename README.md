@@ -5,21 +5,21 @@
 A comparative study of two different multi-object tracking approaches: **OSNet-based tracking** and **DeepSORT tracking**.
 
 
-## 🎯 Overview
+## Overview
 
 This repository provides implementations and comparisons of two distinct tracking methods:
 
-### 🔍 **OSNet-based Tracking**
+###**OSNet-based Tracking**
 - Uses OSNet (Omni-Scale Network) for appearance-based re-identification
 - Extracts discriminative appearance features
 - Focuses on visual similarity for identity matching
 
-### 🎯 **DeepSORT Tracking**
+### **DeepSORT Tracking**
 - Multi-object tracking with Kalman filtering
 - Combines motion prediction with appearance features
 - Handles occlusions and ID switches effectively
 
-## 🎯 Purpose
+## Purpose
 
 This project allows you to:
 - Compare the performance of OSNet and DeepSORT on the same dataset
@@ -27,15 +27,15 @@ This project allows you to:
 - Understand the strengths and weaknesses of each approach
 - Choose the best method for your specific use case
 
-## ✨ Features
+## Features
 
-- ✅ **Two Independent Implementations**: OSNet and DeepSORT as separate modules
-- ✅ **DanceTrack Support**: Tested on challenging dance tracking scenarios
-- ✅ **Easy Comparison**: Run both methods with similar parameters
-- ✅ **GPU Accelerated**: Fast inference with CUDA support
-- ✅ **Detailed Metrics**: MOTA, IDF1, HOTA for comprehensive evaluation
+-  **Two Independent Implementations**: OSNet and DeepSORT as separate modules
+-  **DanceTrack Support**: Tested on challenging dance tracking scenarios
+-  **Easy Comparison**: Run both methods with similar parameters
+-  **GPU Accelerated**: Fast inference with CUDA support
+-  **Detailed Metrics**: MOTA, IDF1, HOTA for comprehensive evaluation
 
-## 🚀 Installation
+## Installation
 
 ### Prerequisites
 - Python 3.8 or higher
@@ -69,3 +69,35 @@ cd dancetrack
 cd checkpoints
 wget https://huggingface.co/mattiasegu/sambamotr/resolve/main/sambamotr_pretrained/dancetrack/dab_detr/sambamotr_dab_dancetrack.pth
 cd ..
+**Alternative:** Use the automated setup script:
+```bash
+bash scripts/setup_all.sh
+```
+## ⚡ Quick Start
+
+### Run OSNet Tracking
+```bash
+cd osnet
+python main.py \
+    --mode submit \
+    --config-path ../configs/osnet_config.yaml \
+    --submit-model ../checkpoints/sambamotr_dab_dancetrack.pth \
+    --dataset DanceTrack \
+    --data-root ../data/dancetrack/ \
+    --submit-data-split val \
+    --use-reid \
+    --reid-thresh 0.7
+```
+
+### Run DeepSORT Tracking
+```bash
+cd deepsort
+python main.py \
+    --mode submit \
+    --config-path ../configs/deepsort_config.yaml \
+    --submit-model ../checkpoints/sambamotr_dab_dancetrack.pth \
+    --dataset DanceTrack \
+    --data-root ../data/dancetrack/ \
+    --submit-data-split val \
+    --use-reid
+```
