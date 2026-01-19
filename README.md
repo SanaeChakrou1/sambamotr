@@ -1,6 +1,6 @@
 # SambaMOTR
 
-[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
+[![Python 3.11+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 
 A comparative study of two different multi-object tracking approaches: **OSNet-based tracking** and **DeepSORT tracking**.
 
@@ -38,7 +38,7 @@ This project allows you to:
 ## Installation
 
 ### Prerequisites
-- Python 3.8 or higher
+- Python 3.11 or higher
 - CUDA 11.0+ (for GPU support)
 - 8GB+ RAM recommended
 
@@ -73,7 +73,7 @@ cd ..
 ```bash
 bash scripts/setup_all.sh
 ```
-## ⚡ Quick Start
+##  Quick Start
 
 ### Run OSNet Tracking
 ```bash
