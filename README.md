@@ -69,6 +69,8 @@ cd dancetrack
 cd checkpoints
 wget https://huggingface.co/mattiasegu/sambamotr/resolve/main/sambamotr_pretrained/dancetrack/dab_detr/sambamotr_dab_dancetrack.pth
 cd ..
+```
+
 
 ##  Quick Start
 
