@@ -45,7 +45,7 @@ This project allows you to:
 ### Quick Setup
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/sambamotr.git
+git clone https://github.com/mattiasegu/sambamotr.git
 cd sambamotr
 
 # Create virtual environment
