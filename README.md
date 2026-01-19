@@ -1,6 +1,6 @@
 # SambaMOTR
 
-[![Python 3.11+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
+[![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
 
 A comparative study of two different multi-object tracking approaches: **OSNet-based tracking** and **DeepSORT tracking**.
 
