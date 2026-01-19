@@ -77,13 +77,17 @@ cd ..
 ### Run OSNet Tracking
 ```bash
 cd osnet
-python main.py \
+!python /content/sambamotr/main.py \
     --mode submit \
-    --config-path ../configs/osnet_config.yaml \
-    --submit-model ../checkpoints/sambamotr_dab_dancetrack.pth \
+    --config-path /content/sambamotr/output/eval_results/train/config.yaml \
+    --available-gpus "0" \
+    --submit-model /content/sambamotr/checkpoints/sambamotr_dab_dancetrack.pth \
     --dataset DanceTrack \
-    --data-root ../data/dancetrack/ \
+    --data-root data/ \
     --submit-data-split val \
+    --exp-name osnet_eval \
+    --submit-dir /content/sambamotr/output/eval_results \
+    --batch-size 1 \
     --use-reid \
     --reid-thresh 0.7
 ```
@@ -91,12 +95,15 @@ python main.py \
 ### Run DeepSORT Tracking
 ```bash
 cd deepsort
-python main.py \
-    --mode submit \
-    --config-path ../configs/deepsort_config.yaml \
-    --submit-model ../checkpoints/sambamotr_dab_dancetrack.pth \
+!python main.py \
+    --mode eval \
+    --config-path configs/sambamotr/dancetrack/def_detr/train_residual_masking_sync_longer.yaml \
+    --available-gpus "0" \
+    --eval-model /content/sambamotr/checkpoints/sambamotr_dab_dancetrack.pth \
     --dataset DanceTrack \
-    --data-root ../data/dancetrack/ \
-    --submit-data-split val \
-    --use-reid
+    --data-root data/\
+    --eval-data-split val \
+    --eval-dir /content/sambamotr/output/eval_results \
+    --outputs-dir /content/sambamotr/output/eval_results\
+    --batch-size 1
 ```
